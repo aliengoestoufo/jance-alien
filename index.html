@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planet Alien · Home</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%91%BD%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="stars"></canvas>
+<div class="scanlines"></div>
+
+<div class="wrapper">
+
+  <header class="top">
+    <div class="status-row">
+      <div class="radar" aria-hidden="true"></div>
+      <span>SIGNAL: <span class="status-active">ACTIVE</span></span>
+    </div>
+    <p class="sitename">PLANET ALIEN</p>
+    <div class="terminal-line">
+      <span class="prompt">&gt;</span><span id="typedText"></span><span class="cursor">▍</span>
+    </div>
+  </header>
+
+  <nav class="navigation">
+    <a href="index.html">Home</a>
+    <a href="interests.html">Interests</a>
+    <a href="about.html">About Me</a>
+    <a href="favorites.html">Favorites</a>
+  </nav>
+
+  <main>
+    <section class="box">
+      <div class="eyebrow">Log 001 · Transmission</div>
+      <h2>Welcome Aboard</h2>
+      <p>Hey, thanks for landing on my page! This little planet is where I log my interests, a bit about who I am, and a running archive of my favorite shows &amp; movies. Use the nav above to explore around.</p>
+    </section>
+
+    <section class="grid">
+      <div class="box">
+        <div class="eyebrow">Log 002 · Status</div>
+        <h2>Quick Facts</h2>
+        <ul>
+          <li>Status: Believer</li>
+          <li>Currently watching: <em>add yours here</em></li>
+          <li>Favorite color: green, obviously</li>
+        </ul>
+      </div>
+      <div class="box">
+        <div class="eyebrow">Log 003 · Archive</div>
+        <h2>Site Log</h2>
+        <ul>
+          <li>2026 — Site launched 🛸</li>
+          <li>Added the favorites gallery with a lightbox viewer</li>
+          <li>More transmissions incoming...</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Planet Alien · broadcasting from somewhere on Earth</p>
+  </footer>
+
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
