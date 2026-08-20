@@ -1,8 +1,12 @@
 /* ==========================================================
    PLANET ALIEN — lightbox.js
-   Powers the favorites gallery: click a poster to maximize
-   it in a popup, then browse with the arrows, the keyboard
-   (left / right / escape), or by clicking outside the image.
+   Shared by log.html (shows/movies, split panel, hover-reveal
+   arrows) and favorites.html (favorite characters, stacked
+   gradient card). Reads whatever data-title/-rating/-log/-color-1/
+   -color-2 each gallery item provides and fills in whichever
+   lightbox elements exist on the current page — click a thumbnail
+   to open it, then browse with the arrows, the keyboard
+   (left / right / escape), or by clicking outside the panel.
    Only runs on pages that actually have a .gallery element.
    ========================================================== */
 
@@ -12,14 +16,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const lightbox = document.getElementById('lightbox');
   const lightboxImage = document.getElementById('lightboxImage');
-  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxTitle = document.getElementById('lightboxTitle');
+  const lightboxRating = document.getElementById('lightboxRating');
+  const lightboxLog = document.getElementById('lightboxLog');
   const closeBtn = document.getElementById('lightboxClose');
   const prevBtn = document.getElementById('lightboxPrev');
   const nextBtn = document.getElementById('lightboxNext');
 
   const images = items.map(item => {
     const img = item.querySelector('img');
-    return { src: img.src, title: img.dataset.title || img.alt || '' };
+    return {
+      src: img.src,
+      title: img.dataset.title || img.alt || '',
+      rating: img.dataset.rating || '',
+      log: img.dataset.log || '',
+      color1: img.dataset.color1 || '',
+      color2: img.dataset.color2 || ''
+    };
   });
 
   let currentIndex = 0;
@@ -28,7 +41,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const current = images[currentIndex];
     lightboxImage.src = current.src;
     lightboxImage.alt = current.title;
-    lightboxCaption.textContent = current.title;
+    if (lightboxTitle) lightboxTitle.textContent = current.title;
+    if (lightboxRating) lightboxRating.textContent = current.rating ? `Rating: ${current.rating}` : '';
+    if (lightboxLog) lightboxLog.textContent = current.log;
+
+    // Per-item accent gradient, used by the character-card lightbox on
+    // favorites.html. Harmless no-op on pages that don't set these.
+    if (current.color1) lightbox.style.setProperty('--char-c1', current.color1);
+    if (current.color2) lightbox.style.setProperty('--char-c2', current.color2);
   }
 
   function openLightbox(index) {
