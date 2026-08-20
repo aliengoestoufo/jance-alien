@@ -1,23 +1,26 @@
 # Planet Alien
 
-A small personal site with four pages — Home, Interests, About Me, and
-Favorites (with a click-to-maximize image gallery). Retro alien/UFO,
-terminal-log look: green signal text, amber status accents, a canvas
-starfield, a CSS radar sweep, and subtle CRT scanlines.
+A small personal site with four pages — Home, Log, Favourites, and About
+Me. Log is a click-to-maximize gallery of shows/movies (split-panel
+lightbox with hover-reveal arrows); Favourites is a gallery of favorite
+characters (stacked card lightbox with a gradient border matching each
+one's colors). Retro alien/UFO, terminal-log look: green signal text,
+amber status accents, a canvas starfield, a CSS radar sweep, and subtle
+CRT scanlines.
 
 ## File structure
 
 ```
 planet-alien-site/
 ├── index.html          Home page
-├── interests.html       Interests page
-├── about.html           About Me page
-├── favorites.html        Favorites page (gallery + lightbox)
+├── log.html             Log page — shows/movies gallery + lightbox
+├── favorites.html        Favourites page — character gallery + lightbox
+├── about.html            About Me page
 ├── css/
-│   └── style.css         All styling, shared by every page
+│   └── style.css          All styling, shared by every page
 ├── js/
-│   ├── main.js            Nav highlighting, starfield, terminal typewriter — runs on every page
-│   └── lightbox.js        Gallery popup viewer — only used by favorites.html
+│   ├── main.js             Nav highlighting, starfield, terminal typewriter — runs on every page
+│   └── lightbox.js         Gallery popup viewer — shared by log.html and favorites.html
 └── README.md
 ```
 
@@ -29,15 +32,16 @@ server (e.g. `python3 -m http.server` from inside this folder) so the
 ## Customizing it
 
 - **Your name/bio** — edit the paragraph in `about.html`.
-- **Interests** — edit or duplicate the boxes in `interests.html`.
-- **Favorites gallery** — each poster is one `<div class="gallery-item">`
-  block in `favorites.html`. The gallery images right now are placeholders
-  (generated at placehold.co) so nothing here infringes on anyone's poster
-  art — swap the `src` for your own images (upload them into an `/images`
-  folder in this project and point `src="images/yourfile.jpg"` at them),
-  and update the `alt` and `data-title` attributes to match. The lightbox
-  automatically picks up however many `.gallery-item` blocks you have —
-  add or remove as many as you like.
+- **Log gallery** — each poster is one `<div class="gallery-item">` block
+  in `log.html`, with `data-title`, `data-rating`, and `data-log`
+  attributes. Swap the `src` for your own images (upload them into an
+  `/images` folder in this project and point `src="images/yourfile.jpg"`
+  at them).
+- **Favourites gallery** — same idea in `favorites.html`, but each item
+  also carries `data-color-1` and `data-color-2` (hex codes) that set the
+  gradient border and glow in the lightbox to match that entry.
+- Both galleries automatically pick up however many `.gallery-item`
+  blocks you have — add or remove as many as you like.
 - **Colors** — all colors are CSS variables at the top of `css/style.css`
   (`:root { ... }`), so you can retheme the whole site by changing a
   handful of hex values there.
