@@ -3,14 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Planet Alien · Favorites</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%91%BD%3C/text%3E%3C/svg%3E">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://placehold.co https://file.garden; connect-src 'self'; base-uri 'self'; form-action 'self';">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>PowerAlien · Favourites</title>
+<link rel="icon" type="image/png" href="https://file.garden/aI8-BqCdkxABOmJv/alienicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="js-loading">
 
 <canvas id="stars"></canvas>
 <div class="scanlines"></div>
@@ -22,7 +24,7 @@
       <div class="radar" aria-hidden="true"></div>
       <span>SIGNAL: <span class="status-active">ACTIVE</span></span>
     </div>
-    <p class="sitename">PLANET ALIEN</p>
+    <p class="sitename">JANCE ALIEN'S LOG</p>
     <div class="terminal-line">
       <span class="prompt">&gt;</span><span id="typedText"></span><span class="cursor">▍</span>
     </div>
@@ -30,49 +32,73 @@
 
   <nav class="navigation">
     <a href="index.html">Home</a>
-    <a href="interests.html">Interests</a>
+    <a href="log.html">Log</a>
+    <a href="favorites.html">Favourites</a>
     <a href="about.html">About Me</a>
-    <a href="favorites.html">Favorites</a>
   </nav>
 
   <main>
     <section class="box">
-      <div class="eyebrow">Log 001 · Viewing Archive</div>
-      <h2>Favorite Shows &amp; Movies</h2>
-      <p>Click any poster to open it full-size, then use the arrows — or your keyboard's left / right keys — to browse. These are placeholder posters; swap them for your own inside the <code>&lt;div class="gallery"&gt;</code> section of <code>favorites.html</code>.</p>
+      <div class="eyebrow">Log 001 · Favourite Characters</div>
+      <h2>People I Love</h2>
+      <p>Click any card for a closer look — it opens with their name and why I love them, framed in their own colors. These are Hololive members as a sample; swap them for your own favorite characters, people, or YouTubers inside the <code>&lt;div class="gallery"&gt;</code> section of <code>favorites.html</code>.</p>
     </section>
 
-    <div class="eyebrow" style="margin-left:4px;">Log 002 · Favorites Gallery</div>
+    <div class="eyebrow">Log 002 · Favourites Gallery</div>
     <div class="gallery" id="gallery">
 
       <div class="gallery-item" tabindex="0">
-        <img src="https://placehold.co/300x450/0b1810/39ff6a?text=E.T." alt="E.T. the Extra-Terrestrial" data-title="E.T. the Extra-Terrestrial">
-        <div class="cap">E.T. the Extra-Terrestrial</div>
+        <img src="https://placehold.co/300x450/1a1a1a/ff4fa3?text=Mori+Calliope" alt="Mori Calliope"
+          data-title="Mori Calliope"
+          data-color-1="#ff4fa3"
+          data-color-2="#16151a"
+          data-log="The Grim Reaper rapper with a soft side. Her original songs hit different, and the pink-and-black aesthetic is just immaculate.">
+        <div class="cap">Mori Calliope</div>
       </div>
 
       <div class="gallery-item" tabindex="0">
-        <img src="https://placehold.co/300x450/0b1810/39ff6a?text=Arrival" alt="Arrival" data-title="Arrival">
-        <div class="cap">Arrival</div>
+        <img src="https://placehold.co/300x450/0b1d33/4fc3f7?text=Gawr+Gura" alt="Gawr Gura"
+          data-title="Gawr Gura"
+          data-color-1="#4fc3f7"
+          data-color-2="#eaf6ff"
+          data-log="An absolute chaos gremlin shark who somehow became one of the most subscribed VTubers ever. The 'a' laugh lives in my head.">
+        <div class="cap">Gawr Gura</div>
       </div>
 
       <div class="gallery-item" tabindex="0">
-        <img src="https://placehold.co/300x450/0b1810/39ff6a?text=The+X-Files" alt="The X-Files" data-title="The X-Files">
-        <div class="cap">The X-Files</div>
+        <img src="https://placehold.co/300x450/3a0e05/ff7a1a?text=Takanashi+Kiara" alt="Takanashi Kiara"
+          data-title="Takanashi Kiara"
+          data-color-1="#ff7a1a"
+          data-color-2="#d81e2c"
+          data-log="Endless energy, terrible puns, and a genuinely huge heart. The phoenix that keeps getting back up no matter what.">
+        <div class="cap">Takanashi Kiara</div>
       </div>
 
       <div class="gallery-item" tabindex="0">
-        <img src="https://placehold.co/300x450/0b1810/39ff6a?text=Stranger+Things" alt="Stranger Things" data-title="Stranger Things">
-        <div class="cap">Stranger Things</div>
+        <img src="https://placehold.co/300x450/130a1f/14b8a6?text=Ninomae+Ina%27nis" alt="Ninomae Ina'nis"
+          data-title="Ninomae Ina'nis"
+          data-color-1="#7c3aed"
+          data-color-2="#14b8a6"
+          data-log="Eldritch god trying her best at being an office lady. The lore-heavy singing streams are criminally underrated.">
+        <div class="cap">Ninomae Ina'nis</div>
       </div>
 
       <div class="gallery-item" tabindex="0">
-        <img src="https://placehold.co/300x450/0b1810/39ff6a?text=Doctor+Who" alt="Doctor Who" data-title="Doctor Who">
-        <div class="cap">Doctor Who</div>
+        <img src="https://placehold.co/300x450/2a0a10/ffcc33?text=Houshou+Marine" alt="Houshou Marine"
+          data-title="Houshou Marine"
+          data-color-1="#e0263f"
+          data-color-2="#ffcc33"
+          data-log="Self-proclaimed pirate captain with the funniest ad-libs in the business. Somehow both chaotic and incredibly hardworking.">
+        <div class="cap">Houshou Marine</div>
       </div>
 
       <div class="gallery-item" tabindex="0">
-        <img src="https://placehold.co/300x450/0b1810/39ff6a?text=Men+in+Black" alt="Men in Black" data-title="Men in Black">
-        <div class="cap">Men in Black</div>
+        <img src="https://placehold.co/300x450/0a1e33/ffe9a8?text=Amane+Kanata" alt="Amane Kanata"
+          data-title="Amane Kanata"
+          data-color-1="#4fb8ff"
+          data-color-2="#ffe9a8"
+          data-log="The angel who dropped from heaven and never quite got the hang of being one. Her singing voice is unreal.">
+        <div class="cap">Amane Kanata</div>
       </div>
 
     </div>
@@ -84,13 +110,23 @@
 
 </div>
 
-<!-- Lightbox popup: hidden until a gallery image is clicked -->
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
-  <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image">&#10094;</button>
-  <img class="lightbox-image" id="lightboxImage" src="" alt="">
-  <button class="lightbox-next" id="lightboxNext" aria-label="Next image">&#10095;</button>
-  <div class="lightbox-caption" id="lightboxCaption"></div>
+<!-- Lightbox popup: hidden until a gallery image is clicked. lightbox-character
+     switches it to the image-top/info-bottom curved gradient card. -->
+<div class="lightbox lightbox-character" id="lightbox">
+  <div class="lightbox-panel">
+    <div class="lightbox-panel-inner">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+      <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image">&#10094;</button>
+      <div class="lightbox-media">
+        <img class="lightbox-image" id="lightboxImage" src="" alt="">
+      </div>
+      <div class="lightbox-info">
+        <div class="lightbox-title" id="lightboxTitle"></div>
+        <p class="lightbox-log" id="lightboxLog"></p>
+      </div>
+      <button class="lightbox-next" id="lightboxNext" aria-label="Next image">&#10095;</button>
+    </div>
+  </div>
 </div>
 
 <script src="js/main.js"></script>
