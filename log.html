@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://placehold.co https://file.garden; connect-src 'self'; base-uri 'self'; form-action 'self';">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>PowerAlien · Log</title>
+<link rel="icon" type="image/png" href="https://file.garden/aI8-BqCdkxABOmJv/alienicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="js-loading">
+
+<canvas id="stars"></canvas>
+<div class="scanlines"></div>
+
+<div class="wrapper">
+
+  <header class="top">
+    <div class="status-row">
+      <div class="radar" aria-hidden="true"></div>
+      <span>SIGNAL: <span class="status-active">ACTIVE</span></span>
+    </div>
+    <p class="sitename">JANCE ALIEN'S LOG</p>
+    <div class="terminal-line">
+      <span class="prompt">&gt;</span><span id="typedText"></span><span class="cursor">▍</span>
+    </div>
+  </header>
+
+  <nav class="navigation">
+    <a href="index.html">Home</a>
+    <a href="log.html">Log</a>
+    <a href="favorites.html">Favourites</a>
+    <a href="about.html">About Me</a>
+  </nav>
+
+  <main>
+    <section class="box">
+      <div class="eyebrow">Log 001 · Viewing Archive</div>
+      <h2>Favorite Shows &amp; Movies</h2>
+      <p>Click any poster for a closer look — it opens the image alongside my rating and notes on it. Move your cursor to either edge of the popup to reveal the arrows and browse, or use your keyboard's left / right keys. These are placeholder posters and placeholder notes; swap them for your own inside the <code>&lt;div class="gallery"&gt;</code> section of <code>log.html</code>.</p>
+    </section>
+
+    <div class="eyebrow">Log 002 · Entries</div>
+    <div class="gallery" id="gallery">
+
+      <div class="gallery-item" tabindex="0">
+        <img src="https://placehold.co/300x450/0b1810/39ff6a?text=E.T." alt="E.T. the Extra-Terrestrial"
+          data-title="E.T. the Extra-Terrestrial"
+          data-rating="9/10"
+          data-log="The first alien movie I ever saw. Still gets me every time Elliott's bike lifts off.">
+        <div class="cap">E.T. the Extra-Terrestrial</div>
+      </div>
+
+      <div class="gallery-item" tabindex="0">
+        <img src="https://placehold.co/300x450/0b1810/39ff6a?text=Arrival" alt="Arrival"
+          data-title="Arrival"
+          data-rating="10/10"
+          data-log="Rewatched this three times just to catch the ending clues. Best first-contact movie, easily.">
+        <div class="cap">Arrival</div>
+      </div>
+
+      <div class="gallery-item" tabindex="0">
+        <img src="https://placehold.co/300x450/0b1810/39ff6a?text=The+X-Files" alt="The X-Files"
+          data-title="The X-Files"
+          data-rating="8.5/10"
+          data-log="Grew up on reruns of this. The Monster-of-the-Week episodes are still the comfort watch.">
+        <div class="cap">The X-Files</div>
+      </div>
+
+      <div class="gallery-item" tabindex="0">
+        <img src="https://placehold.co/300x450/0b1810/39ff6a?text=Stranger+Things" alt="Stranger Things"
+          data-title="Stranger Things"
+          data-rating="8/10"
+          data-log="Got into this late but binged all of it in a weekend. The Upside Down still creeps me out.">
+        <div class="cap">Stranger Things</div>
+      </div>
+
+      <div class="gallery-item" tabindex="0">
+        <img src="https://placehold.co/300x450/0b1810/39ff6a?text=Doctor+Who" alt="Doctor Who"
+          data-title="Doctor Who"
+          data-rating="9/10"
+          data-log="Started with the reboot era, went back for the classics. Somehow always find a new favorite Doctor.">
+        <div class="cap">Doctor Who</div>
+      </div>
+
+      <div class="gallery-item" tabindex="0">
+        <img src="https://placehold.co/300x450/0b1810/39ff6a?text=Men+in+Black" alt="Men in Black"
+          data-title="Men in Black"
+          data-rating="8/10"
+          data-log="Peak 90s sci-fi comedy. The neuralyzer bit lives in my head rent-free.">
+        <div class="cap">Men in Black</div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Planet Alien · broadcasting from somewhere on Earth</p>
+  </footer>
+
+</div>
+
+<!-- Lightbox popup: hidden until a gallery image is clicked -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-panel">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <div class="lightbox-hotzone lightbox-hotzone-left">
+      <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image">&#10094;</button>
+    </div>
+    <div class="lightbox-media">
+      <img class="lightbox-image" id="lightboxImage" src="" alt="">
+    </div>
+    <div class="lightbox-info">
+      <div class="lightbox-title" id="lightboxTitle"></div>
+      <div class="lightbox-rating" id="lightboxRating"></div>
+      <p class="lightbox-log" id="lightboxLog"></p>
+    </div>
+    <div class="lightbox-hotzone lightbox-hotzone-right">
+      <button class="lightbox-next" id="lightboxNext" aria-label="Next image">&#10095;</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/lightbox.js"></script>
+</body>
+</html>
